@@ -4,18 +4,68 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --black: #000000;
+  --darkCharcoal: #1D1D1B;
+  --almostBlack: #060606;
+  --darkMidnightBlue: #0B3051;
+  --darkTealBlue: #1E638A;
+  --taupeGray: #A69999;
+  --lightGray: #D5D5D5;
+  --veryLightGray: #F5F5F5;
+  --veryDarkGray: #1A1717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --almostBlack: #060606;
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--almostBlack);
+  background: var(--veryLightGray);
+  font-family: 'Manrope', sans-serif; /* Add Manrope font family */
+  text-wrap: wrap;
+  font-size: 1rem;
+}
+
+/* Responsive styles using Tailwind's breakpoints */
+@media (max-width: 640px) {
+  /* Mobile screens */
+  body {
+    background: var(--lightGray); 
+    font-size: 0.875rem;
+
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  /* Tablet screens */
+  body {
+    background: var(--taupeGray);
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Desktop screens */
+  body {
+    background: var(--veryLightGray); 
+    font-size: 1.125rem
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Larger desktop screens */
+  body {
+    background: var(--veryDarkGray); 
+    font-size: 1.25rem;
+  }
 }
